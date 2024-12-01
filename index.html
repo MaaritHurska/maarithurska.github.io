@@ -4,17 +4,24 @@
 <title>Title</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css"href="m.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif;}
 body, html {
   height: 100%;
   color: #464646;
   line-height: 1.8;
+  font-weight: 100;
 }
+body {
+  background-color: #fff;
 
+}
+p {
+  font-size: medium;
+}
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
@@ -25,8 +32,13 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-color: #f0cfba;
-  min-height: 100%;
+  background-image: url('./kuvat/bannerikukat\ copy\ 2.png');
+  opacity: 0,2;
+  min-height: 30%;
+  font-family: "Holingston", sans-serif;
+  
+
+  
 }
 
 /* Second image (Portfolio) */
@@ -46,7 +58,7 @@ body, html {
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
+  .bgimg-1 .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
     min-height: 400px;
   }
@@ -63,14 +75,10 @@ body, html {
       font-weight: bold;
       text-align: center;
     }
-    .dark-grey {
-      background-color: #f0cfba; /* Change dark-grey color */
-    }
+    
     /* First image (Logo. Full height) */
     
-    .w3-black {
-        background-color: #df7f83;
-    }
+    
     * {box-sizing: border-box}
 
 
@@ -86,108 +94,136 @@ body, html {
   .w3-bar {
     text-align: center;
   }
+  .m-bar {
+    text-align: center;
+  }
+  .m-xlarge {
+    font-size: 100px;
+  }
+   .m-muoto {
+    
+    float: left;
+   border-radius: 50%; 
+   margin: 0 25px 5px 0;
+   float: left;
+   
+   
+   }
+  .m-circle {
+    -webkit-shape-outside: ellipse(50px 100px at 50% 50%);   
+   shape-outside: ellipse(50px 100px at 50% 50%);
+   width: 60%; /* Määrittele tekstiosuuden leveys */
+  float: right; }
+  
 
 </style>
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
+<div class="m-top">
+  <div class="m-bar" id="myNavbar">
     <a href="javascript:void(0);" class="w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
+     
     </a>
-    <a href="#home" class="w3-button">ETUSIVU</a>
-    <a href="#about" class="w3-button w3-hide-small"><i class="fa fa-user"></i> MAARIT</a>
-    <a href="#portfolio" class="w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
-    <a href="#contact" class="w3-button w3-hide-small"><i class="fa fa-envelope"></i> YHTEYS</a>
-    <a href="#" class="w3-button w3-hide-small w3-right w3-hover-red">
+   
+    <a href="#about" class="m-button m-hide-small"><i class="fa fa-user"></i> MAARIT</a>
+    <a href="#portfolio" class="m-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="m-button m-hide-small"><i class="fa fa-envelope"></i> YHTEYS</a>
+    <a href="#" class="m-button m-hide-small m-right m-hover-red">
       <i class="fa fa-search"></i>
     </a>
   </div>
 </div>
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">MAARIT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">YHTEYS</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  <div id="navDemo" class="m-bar-block m-white m-hide m-hide-large m-hide-medium">
+    <a href="#about" class="m-bar-item m-button" onclick="toggleFunction()">MAARIT</a>
+    <a href="#portfolio" class="m-bar-item m-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="m-bar-item m-button" onclick="toggleFunction()">YHTEYS</a>
+    <a href="#" class="m-bar-item m-button">SEARCH</a>
   </div>
 </div>
+<!-- First Parallax Image  -->
+<div class="bgimg-1 m-display-container m-opacity-min" id="home">
+  <div class="m-display-middle" style="white-space:nowrap;">
+    <span class="m-center m-padding m-wide m-animate-opacity" style="font-size: 70px"><div class="handwriting-container">
+      <span id="animated-text"></span>
+  </div>
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">TERVETULOA <span class="w3-hide-small">SIVUILLENI</span>!</span>
+  <script src="script.js"></script> <span class="m-hide-small"></span>
   </div>
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">MINUSTA</h3>
-  <p class="w3-center"><em>Aloitteleva koodaaja</em></p>
-  <p>Näillä sivuilla esittelen osaamistani. Jos olet aloittamassa uutta yritystoimintaa tai valmis laajentamaan jo olemassa olevaa toimintaasi, olet tullut oikeaan paikaan. Haluan nostaa juuri sinut esille ja auttaa tulemaan näkyväksi. </p>
-  <br>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
+<div class="m-content m-container m-padding-64" id="about">
+  
+  
+  <div class="m-row">
+    <div class="m-col m6 m-center m-padding-large">
       <!-- <p><b><i class="fa fa-user w3-margin-right"></i>MAARIT</b></p><br> -->
-      <img src="kuvat/mina.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+      <img src="kuvat/mina.jpg" class="m-round m-image m-hover-opacity-off -muoto" alt="Photo of Me" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Hei! Olen Maarit, kahden ihanan tytön äiti ja web-suunnittelun opiskelija. Portfoliooni olen koonnut näyteitä osaamisestani, sekä muutamia projekteja, joissa olen päässyt harjoittelemaan HTML:n, CSS:n lisäksi JavaScriptin ja Pythonin käyttöä. Tällä hetkellä opiskelen koodausta Aalto yliopiston avoimella Web Software Development kurssilla, sekä suoritan ohjelmoijan perustutkintoa "Koodaamisestako minulle ammatti", aikuiskoulutuksessa.</p>
+    <div class="m-col m6 m-hide-small m-padding-large m-circle right">
+      <h2><b></b>Hei, olen Maarit</b></h2>
+      <em><b>Monipuolinen osaaja Joensuusta</b></em>
+      <p>Olen ohjelmointiin hurahtanut opiskelija, jonka tausta löytyy taloushallinnossa. Tämä sivusto toimii portfoliona, jossa esittelen osaamistani koodauksen, sekä muiden taitojeni saralla. 
+        Tällä hetkellä opiskelen Aalto-yliopiston avoimella Web Software Development -kurssilla ja suoritan ohjelmoijan perustutkintoa Riverian aikuiskoulutuksessa . 
+        Olen vasta äskettäin löytänyt innostuksen koodaamiseen, ja se on vienyt minut täysin mukanaan. Minulle tärkeitä arvoja ovat luovuus, jatkuva oppiminen ja monipuolisuus. 
+        Arvokasta kokemusta olen saanut tehdessäni pieniä projekteja kuten nettisivuja. Haluaisin tulevaisuudessa keskittyä kehittämään sovelluksia, joissa luovuuteni ja tekniset taitoni yhdistyvät.
+        Vapaa-aikana nautin luonnossa liikkumisesta, valokuvaamisesta, maalaamisesta ja shakin pelaamisesta. 
+      
+         
+      </p>
     </div>
   </div>
   
   <div class="custom-background">
-    <p class="w3-large w3-center w3-padding-16">Osaaminen:</p>
-    <p class="w3-wide"><i class="fa fa-user" aria-hidden="true"></i>Asiakaspalvelu</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small dark-grey w3-center skill-level" style="width:">+10 vuotta</div>
+    <p class="m-large m-center m-padding-16">Kokemus:</p>
+    <p class="m-wide"><i class="fa fa-user" aria-hidden="true"></i>Asiakaspalvelu</p>
+    <div class="m-light-grey">
+      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:">+10 vuotta</div>
       
   </div>
-    <p class="w3-wide"><i class="fa fa-money" aria-hidden="true"></i>Taloushallinto</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small dark-grey w3-center skill-level" style="width:60%">+6 vuotta</div>
+    <p class="m-wide"><i class="fa fa-money" aria-hidden="true"></i>Taloushallinto</p>
+    <div class="m-light-grey">
+      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:60%">+6 vuotta</div>
       
   </div>
-    <p class="w3-wide"><i class="fa fa-camera"></i>Valokuvaus</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small dark-grey w3-center skill-level" style="width:50%">+5 vuotta</div>
+    <p class="m-wide"><i class="fa fa-camera"></i>Valokuvaus</p>
+    <div class="m-light-grey">
+      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:50%">+5 vuotta</div>
+
     </div>
-    <p class="w3-wide"><i class="fa fa-laptop"></i>Web-suunnittelu</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small dark-grey w3-center skill-level" style="width:10%">+1 v.</div>
-    </div>
-    <p class="w3-wide"><i class="fa fa-laptop"></i>Ohjelmointi</p>
-    <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small dark-grey w3-center skill-level" style="width:7%">+6 kk</div>
+    <p class="m-wide"><i class="fa fa-laptop"></i>Ohjelmointi</p>
+    <div class="m-light-grey">
+      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:7%">+6 kk</div>
     </div>
 
 <div class="=custom-background1">
-    <div class="w3-row">
-      <div class="w3-col w3-quarter w3-section">
-        <span class="w3-xlarge">2kk</span><br>
+    <div class="m-row">
+      <div class="m-col m-quarter m-section">
+        <span class="m-xlarge">1kk</span><br>
+        React
+      </div>
+      <div class="m-col m-quarter m-section">
+        <span class="m-xlarge">2kk</span><br>
         Python
       </div>
-      <div class="w3-col w3-quarter w3-section">
-        <span class="w3-xlarge">3kk</span><br>
+      <div class="m-col m-quarter m-section">
+        <span class="m-xlarge">3kk</span><br>
         Javascript
-      </div>
-      <div class="w3-col w3-quarter w3-section">
-        <span class="w3-xlarge">6kk</span><br>
-        HTML ja CSS
     </div>
-    <div class="w3-col w3-quarter w3-section">
-      <span class="w3-xlarge">+5v.</span><br>
-      Wordpress
+    <div class="m-col m-quarter m-section">
+      <span class="m-xlarge">+6kk</span><br>
+      HTML ja CSS
   </div>
       </div>
     </div>
   </div>
   
-  <div class="w3-content">
+  <div class="m-content">
     <!-- Content after the custom background -->
   </div>
   
@@ -196,134 +232,119 @@ body, html {
       </div>
     </div>
   </div>
-<div class="w3-content">
+<div class="m-content">
     <!-- Content before the custom background -->
   </div>
   
 <!-- Second Parallax Image with Portfolio Text -->
-<div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+<div class="bgimg-2 m-display-container m-opacity-min">
+  <div class="m-display-middle">
+    <span class="m-xxlarge m-text-white m-wide">PORTFOLIO</span>
   </div>
 </div>
 
 <!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">TYÖNI</h3>
-  <p class="w3-center"><em>Tästä löydät ottamiani kuvia<br> Kuvaa klikkaamalla saat niistä suurempia</em></p><br>
+<div class="m-content m-container m-padding-64" id="portfolio">
+  <h3 class="m-center">Kuvagalleria</h3>
+  <p class="m-center"><em>Tästä löydät ottamiani kuvia<br> Kuvaa klikkaamalla saat niistä suurempia</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="./kuvat/koli.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rippikuva Kolilla">
+  <div class="m-row-padding m-center">
+    <div class="m-col m3">
+      <img src="./kuvat/koli.jpg" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Rippikuva Kolilla">
     </div>
 
-    <div class="w3-col m3">
-      <img src="./kuvat/mvkoli.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Rippikuva Kolilla mustavalkoinen">
+    <div class="m-col m3">
+      <img src="./kuvat/mvkoli.jpg" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Rippikuva Kolilla mustavalkoinen">
     </div>
 
-    <div class="w3-col m3">
+    <div class="m-col m3">
       <img src="./kuvat/kuuset.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Ensilumi">
     </div>
 
-    <div class="w3-col m3">
+    <div class="m-col m3">
       <img src="./kuvat/ounasjoki.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Myrskyn jälkeen">
     </div>
   </div>
 
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="./kuvat/tahtitaivas.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Tähtitaivas">
+  <div class="m-row-padding m-center m-section">
+    <div class="m-col m3">
+      <img src="./kuvat/tahtitaivas.jpg" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Tähtitaivas">
     </div>
 
-    <div class="w3-col m3">
-      <img src="./kuvat/jussi.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Hiihtoretki">
+    <div class="m-col m3">
+      <img src="./kuvat/jussi.jpeg" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Hiihtoretki">
     </div>
 
-    <div class="w3-col m3">
-      <img src="./kuvat/syksy.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Aamu-uinti">
+    <div class="m-col m3">
+      <img src="./kuvat/syksy.jpg" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Aamu-uinti">
     </div>
 
     
-    <div class="w3-col m3">
-      <img src="./kuvat/henna-riikka.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Oma voima. Henna-Riikka Tiri">
+    <div class="m-col m3">
+      <img src="./kuvat/henna-riikka.jpeg" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Oma voima. Henna-Riikka Tiri">
     </div>
     
-    <div class="w3-col m3">
-    <img src="./kuvat/islanti.JPG" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="No stress, no worries">
+    <div class="m-col m3">
+    <img src="./kuvat/islanti.JPG" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="No stress, no worries">
   </div>
-  <div class="w3-col m3">
-      <img src="./kuvat/Walking.JPG" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Walking on ice">
+  <div class="m-col m3">
+      <img src="./kuvat/Walking.JPG" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Walking on ice">
     </div>
-    <div class="w3-col m3">
-      <img src="./kuvat/usva.JPG" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Morning mist">
+    <div class="m-col m3">
+      <img src="./kuvat/usva.JPG" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Morning mist">
     </div>
-    <div class="w3-col m3">
-      <img src="./kuvat/juhannus.JPG" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Juhannustaika">
+    <div class="m-col m3">
+      <img src="./kuvat/juhannus.JPG" style="width:100%" onclick="onClick(this)" class="m-hover-opacity" alt="Juhannustaika">
     </div>
     
       
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LATAA LISÄÄ</button>
+   
   </div>
-  
 </div>
 
 <!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
+<div id="modal01" class="m-modal m-black" onclick="this.style.display='none'">
+  <span class="m-button m-large m-black m-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="m-modal-content m-animate-zoom m-center m-transparent m-padding-64">
+    <img id="img01" class="m-image">
+    <p id="caption" class="m-opacity m-large"></p>
   </div>
 </div>
 
 <!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-     <span class="w3-xxlarge w3-text-white w3-wide">YHTEYS</span>
+<div class="bgimg-3 m-display-container m-opacity-min">
+  <div class="m-display-middle">
+     <span class="m-xxlarge m-text-white m-wide">YHTEYS</span>
   </div>
 </div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">Kiinnostuitko?</h3>
-  <p class="w3-center"><em>Ota yhteyttä!</em></p>
+<div class="m-content m-container m-padding-64" id="contact">
+  <h3 class="m-center">Kiinnostuitko?</h3>
+  <p class="m-center"><em>Ota yhteyttä niin
+  <br>sovitaan tapaaminen <i class="fa fa-coffee"></i></em></p>
 
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+  <div class="m-row m-padding-32 m-section">
+    <div class="m-col m4 m-container">
+      
     </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Joensuu<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Puhelin: +358<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+    <div class="m-col m8 m-panel">
+      <div class="m-large m-margin-bottom">
+        <i class="fa fa-map-marker fa-fw m-hover-text-black m-xlarge m-margin-center"></i> Joensuu<br>
+        <i class="fa fa-phone fa-fw m-hover-text-black m-xlarge m-margin-right"></i> Puhelin: +358<br>
+        <i class="fa fa-envelope fa-fw m-hover-text-black m-xlarge m-margin-right"></i> Sähköposti: mail@mail.com<br>
       </div>
-      <p>Tule juomaan kuppi kahvia <i class="fa fa-coffee"></i>tai jätä minulle viesti:</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-          </div>
-          <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-          </div>
-        </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> LÄHETÄ VIESTI
-        </button>
-      </form>
+      
     </div>
   </div>
 </div>
 
 <!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-gray"><i class="fa fa-arrow-up w3-margin-right"></i>Sivun alkuun</a>
-  <div class="w3-xlarge w3-section">
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
+<footer class="m-center m-persikka m-padding-64 m-opacity m-hover-opacity-off">
+  <a href="#home" class="m-button m-koralli"><i class="fa fa-arrow-up m-margin-right"></i>Sivun alkuun</a>
+  <div class="m-xlarge m-section">
+    <i class="fa fa-instagram m-hover-opacity"></i>
   </div>
 </footer>
  
@@ -341,19 +362,19 @@ window.onscroll = function() {myFunction()};
 function myFunction() {
     var navbar = document.getElementById("myNavbar");
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        navbar.className = "m-bar" + " m-card" + " m-animate-top" + " m-white";
     } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        navbar.className = navbar.className.replace(" m-card m-animate-top m-white", "");
     }
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
     var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
+    if (x.className.indexOf("m-show") == -1) {
+        x.className += " m-show";
     } else {
-        x.className = x.className.replace(" w3-show", "");
+        x.className = x.className.replace(" m-show", "");
     }
 }
 </script>
