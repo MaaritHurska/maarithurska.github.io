@@ -54,7 +54,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 .m-bordered tr,.m-table-all tr{border-bottom:1px solid #ddd}.m-striped tbody tr:nth-child(even){background-color:#f1f1f1}
 
-.m-table-all tr:nth-child(odd){background-color:#fff}.w3-table-all tr:nth-child(even){background-color:#f1f1f1}
+.m-table-all tr:nth-child(odd){background-color:#fff}.m-table-all tr:nth-child(even){background-color:#f1f1f1}
 
 .m-hoverable tbody tr:hover,.m-ul.m-hoverable li:hover{background-color:#ccc}.m-centered tr th,.m-centered tr td{text-align:center}
 
@@ -147,7 +147,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .m-codespan{color:crimson;background-color:#f1f1f1;padding-left:4px;padding-right:4px;font-size:110%}
 .m-card,.m-card-2{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
 .m-card-4,.m-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
-.m-spin{animation:w3-spin 2s infinite linear}@keyframes w3-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+.m-spin{animation:m-spin 2s infinite linear}@keyframes m-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
 .m-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
 .m-animate-opacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
 .m-animate-top{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
@@ -193,7 +193,13 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /* Omat värit */
 .m-persikka{color:#464646!important;background-color:#f0cfba!important}
 .m-koralli{color:#fff!important;background-color:#df7f83!important}
+.m-text-koralli{color: #df7f83!important}
+.m-border-koralli,.m-hover-border-koralli:hover{border-color:#df7f83!important}
 .m-border-black{border:#464646!important}
+.m-accent-green{background-color: #9F9A7F!important}
+.m-border-vihrea{border-color: #9F9A7F!important}
+.m-primary{background-color: #D2B0A2!important}
+.m-border-primary{border-color:#D2B0A2!important}
 
 .m-amber,.m-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
 .m-aqua,.m-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
@@ -220,7 +226,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .m-black,.m-hover-black:hover{color:#fff!important;background-color:#000!important}
 .m-grey,.m-hover-grey:hover,.m-gray,.m-hover-gray:hover{color:#000!important;background-color:#9e9e9e!important}
 .m-light-grey,.m-hover-light-grey:hover,.m-light-gray,.m-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
-.m-dark-grey,.m-hover-dark-grey:hover,.m-dark-gray,.m-hover-dark-gray:hover{color:#fff!important;background-color:#f0cfba;!important}
+.m-light-coral,.m-hover-light-coral:hover,.m-light-coral,.m-hover-light-coral:hover{color:#464646!important;background-color:#f0cfba;!important}
 .m-pale-red,.m-hover-pale-red:hover{color:#000!important;background-color:#ffdddd!important}
 .m-pale-green,.m-hover-pale-green:hover{color:#000!important;background-color:#ddffdd!important}
 .m-pale-yellow,.m-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
@@ -231,7 +237,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .m-text-light-blue,.m-hover-text-light-blue:hover{color:#87CEEB!important}
 .m-text-brown,.m-hover-text-brown:hover{color:#795548!important}
 .m-text-cyan,.m-hover-text-cyan:hover{color:#00bcd4!important}
-.m-text-blue-grey,.m-hover-text-blue-grey:hover,.w3-text-blue-gray,.w3-hover-text-blue-gray:hover{color:#607d8b!important}
+.m-text-blue-grey,.m-hover-text-blue-grey:hover,.m-text-blue-gray,.m-hover-text-blue-gray:hover{color:#607d8b!important}
 .m-text-green,.m-hover-text-green:hover{color:#4CAF50!important}
 .m-text-light-green,.m-hover-text-light-green:hover{color:#8bc34a!important}
 .m-text-indigo,.m-hover-text-indigo:hover{color:#3f51b5!important}
