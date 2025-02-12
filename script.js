@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Start typing animation
-    type();
+    // Tarkistetaan näytön leveys ennen animaation käynnistämistä
+    if (window.innerWidth >= 768) {
+        type(); // Käynnistetään animaatio vain, jos näyttö on tarpeeksi suuri
+    } else {
+        animatedText.textContent = text; // Mobiilissa näytetään vain valmis teksti
+    }
 });
