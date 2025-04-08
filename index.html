@@ -13,7 +13,7 @@
   />
   <link rel="stylesheet" href="styles.css" />
 
-    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif;}
 body, html {
@@ -451,32 +451,17 @@ function toggleFunction() {
 }
 </script>
     
-    <!-- Put this on your page BEFORE the script below -->
-    <div id="webchat" style="width: 500px; height: 500px;"></div>
-    
-    <!-- In your <body> tag -->
-    <script>
-      window.botpress.on("webchat:ready", () => {
-        window.botpress.open();
-      });
-      window.botpress.init({
-      "botId": "31a2e0e4-08f3-4d9b-8432-33d47f374772",
-      "configuration": {
-        "website": {},
-        "email": {},
-        "phone": {},
-        "termsOfService": {},
-        "privacyPolicy": {},
-        "color": "#3B82F6",
-        "variant": "solid",
-        "themeMode": "light",
-        "fontFamily": "inter",
-        "radius": 1
-      },
-      "clientId": "c3b58052-d0ed-480b-9943-de2ae024bdc8",
-      "selector": "#webchat"
-    });
-    </script>
+<script>
+  window.botpressWebChat.init({
+    botId: "31a2e0e4-08f3-4d9b-8432-33d47f374772",
+    clientId: "c3b58052-d0ed-480b-9943-de2ae024bdc8",
+    hostUrl: "https://cdn.botpress.cloud/webchat/v0",
+    messagingUrl: "https://messaging.botpress.cloud",
+    botName: "Maaritin Botti",
+    showPoweredBy: false
+  });
+</script>
+
 
 <!-- Esikatselu: Lisää tämä HTML-sivun <body>-osaan -->
 
