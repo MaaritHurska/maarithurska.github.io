@@ -438,6 +438,26 @@ function toggleFunction() {
     }
 }
 </script>
+    <!-- Botpress Chatbot Upotus (demo) -->
+<script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+    botId: "your-bot-id", // Vaihda oma botin ID
+    clientId: "your-client-id", // Saat Botpressista
+    hostUrl: "https://cdn.botpress.cloud/webchat/v0",
+    messagingUrl: "https://messaging.botpress.cloud",
+    enableConversationDeletion: false,
+    showPoweredBy: false, // Piilota brändi, jos Plus-taso
+    botName: "Yritysbotti",
+    avatarUrl: "https://example.com/avatar.png", // Valinnainen oma logo
+    stylesheet: "", // Voit liittää oman CSS-tyylin halutessasi
+    containerWidth: "100%",
+    layoutWidth: "400px",
+    enableTranscriptDownload: false
+  });
+</script>
+
+<!-- Esikatselu: Lisää tämä HTML-sivun <body>-osaan -->
 
 </body>
 </html>
