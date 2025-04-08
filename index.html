@@ -451,6 +451,8 @@ function toggleFunction() {
 }
 </script>
     
+<!-- Lisää tämä osio ennen </body>-tägiä HTML-sivullesi -->
+<script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
 <script>
   window.botpressWebChat.init({
     botId: "31a2e0e4-08f3-4d9b-8432-33d47f374772",
@@ -458,7 +460,11 @@ function toggleFunction() {
     hostUrl: "https://cdn.botpress.cloud/webchat/v0",
     messagingUrl: "https://messaging.botpress.cloud",
     botName: "Maaritin Botti",
-    showPoweredBy: false
+    showPoweredBy: false,
+    enableTranscriptDownload: false,
+    enableConversationDeletion: false,
+    containerWidth: "100%",
+    layoutWidth: "400px"
   });
 </script>
 
