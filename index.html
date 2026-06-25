@@ -1,456 +1,755 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
-<title>Title</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"href="m.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-  />
-  <link rel="stylesheet" href="styles.css" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maarit Hurskainen – ICT-osaaja & Web-kehittäjä</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif;}
-body, html {
-  height: 100%;
-  color: #464646;
-  line-height: 1.8;
-  font-weight: 100;
-}
-body {
-  background-color: #fff;
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-}
-p {
-  font-size: medium;
-}
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  opacity: 0,2;
-  min-height: 30%;
-  font-family: "Holingston", sans-serif;
-  
-
-  
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url('./kuvat/ounasjoki.jpg');
-  min-height: 400px;
-}
-
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url('./kuvat/kesalahti.jpeg');
-  min-height: 400px;
-  width: 100vw !important;
-  max-width: 100% !important;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.m-wide {letter-spacing: 10px;}
-.m-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1 .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
+  :root {
+    --bg:        #0F1624;
+    --bg2:       #161E30;
+    --bg3:       #1D2640;
+    --gold:      #E8A830;
+    --gold-dim:  #C48A1A;
+    --text:      #E8EBF2;
+    --muted:     #7A8399;
+    --border:    #2A3450;
+    --display:   'Playfair Display', serif;
+    --body:      'DM Sans', sans-serif;
   }
-}
-.custom-background {
-      padding: 16px;
-      text-align: center;
-    }
-    
-    .skill-level {
-      background-color: #f0cfba;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      text-align: center;
-    }
-    
-    /* First image (Logo. Full height) */
-    
-    
-    * {box-sizing: border-box}
 
+  html { scroll-behavior: smooth; }
 
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+  }
 
-.skills {
-  text-align: right;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: white;
-}
-.js {
-  width: 65%; background-color: #f0cfba;}
-  .m-bar {
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 2.5rem;
+    background: rgba(15,22,36,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 2.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-line {
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: linear-gradient(135deg, transparent 60%, rgba(232,168,48,0.04) 100%);
+    pointer-events: none;
+  }
+  .hero-content { max-width: 720px; }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(232,168,48,0.3);
+    padding: 0.3rem 0.9rem;
+    border-radius: 2px;
+    margin-bottom: 1.8rem;
+  }
+  .hero-name {
+    font-family: var(--display);
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    font-weight: 900;
+    line-height: 1.08;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  .hero-name span { color: var(--gold); }
+  .hero-role-wrap {
+    font-family: var(--display);
+    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+    color: var(--muted);
+    margin-bottom: 2rem;
+    min-height: 2.4rem;
+  }
+  #rotating-role {
+    color: var(--text);
+    border-right: 2px solid var(--gold);
+    padding-right: 4px;
+    animation: blink 0.8s step-end infinite;
+  }
+  @keyframes blink { 50% { border-color: transparent; } }
+  .hero-desc {
+    font-size: 1.08rem;
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: #0F1624;
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    padding: 0.85rem 2rem;
+    border: none; border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-dim); transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .hero-stat-num {
+    font-family: var(--display);
+    font-size: 2.2rem; font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.82rem; color: var(--muted);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    margin-top: 0.3rem;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    color: var(--text);
+  }
+  .section-desc {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 560px; line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  /* ── ABOUT ── */
+  #about { padding-top: 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-wrap img {
+    width: 100%; border-radius: 4px;
+    display: block;
+    filter: grayscale(20%);
+  }
+  .about-img-badge {
+    position: absolute; bottom: -1rem; right: -1rem;
+    background: var(--gold);
+    color: #0F1624;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.2rem;
+    border-radius: 2px;
+  }
+  .about-text p { color: var(--muted); margin-bottom: 1.2rem; line-height: 1.85; }
+  .about-text p strong { color: var(--text); }
+  .highlight-list { list-style: none; margin-top: 1.5rem; }
+  .highlight-list li {
+    display: flex; align-items: flex-start; gap: 0.7rem;
+    color: var(--muted); margin-bottom: 0.8rem; font-size: 0.97rem;
+  }
+  .highlight-list li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--bg2); max-width: 100%; padding: 6rem 0; }
+  #skills > * { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+  .skills-header { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 3rem; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .skill-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.8rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .skill-card-icon {
+    font-size: 1.6rem; margin-bottom: 1rem;
+  }
+  .skill-card h3 {
+    font-family: var(--display);
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .skill-card p {
+    font-size: 0.9rem; color: var(--muted); line-height: 1.65;
+    margin-bottom: 1.2rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag {
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.05em;
+    background: rgba(232,168,48,0.1);
+    color: var(--gold);
+    border: 1px solid rgba(232,168,48,0.25);
+    padding: 0.25rem 0.65rem;
+    border-radius: 2px;
+  }
+
+  /* tool bars */
+  .tools-section { max-width: 1100px; margin: 3rem auto 0; padding: 0 2.5rem; }
+  .tools-row { margin-bottom: 2rem; }
+  .tools-row-label {
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.9rem;
+  }
+  .tools-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .tool-chip {
+    font-size: 0.85rem; font-weight: 400;
+    background: var(--bg);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 2px;
+  }
+
+  /* ── TIMELINE ── */
+  #experience { }
+  .timeline { position: relative; padding-left: 2rem; margin-top: 1rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0.5rem; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: -2.45rem; top: 0.45rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--gold);
+  }
+  .timeline-period {
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+  .timeline-title {
+    font-family: var(--display);
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--text); margin-bottom: 0.2rem;
+  }
+  .timeline-org {
+    font-size: 0.9rem; color: var(--muted); margin-bottom: 0.7rem;
+  }
+  .timeline-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--bg2); max-width: 100%; padding: 6rem 0; }
+  #projects .projects-header { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 3rem; }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .project-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    transition: border-color 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .project-card:hover { border-color: var(--gold); }
+  .project-type {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.7rem;
+  }
+  .project-card h3 {
+    font-family: var(--display);
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--text); margin-bottom: 0.6rem;
+  }
+  .project-card p {
+    font-size: 0.92rem; color: var(--muted);
+    line-height: 1.7; flex: 1; margin-bottom: 1.4rem;
+  }
+  .project-link {
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--gold); text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s;
+    align-self: flex-start;
+  }
+  .project-link:hover { opacity: 0.7; }
+
+  /* ── FOR ENTREPRENEURS ── */
+  #yrittajille {
+    border: 1px solid rgba(232,168,48,0.25);
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--bg2) 0%, rgba(232,168,48,0.04) 100%);
+    padding: 3.5rem;
+    max-width: 1100px;
+    margin: 0 auto 6rem;
+  }
+  #yrittajille .section-title { margin-bottom: 0.8rem; }
+  .yrittaja-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 4rem;
+    margin-top: 2rem;
+  }
+  .yrittaja-item h4 {
+    font-weight: 600; color: var(--text);
+    margin-bottom: 0.4rem; font-size: 1rem;
+  }
+  .yrittaja-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
+
+  /* ── CONTACT ── */
+  #contact {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 6rem 2.5rem;
     text-align: center;
   }
-  .m-bar {
+  #contact .section-title { margin-bottom: 1rem; }
+  #contact .section-desc { margin: 0 auto 2.5rem; max-width: 440px; }
+  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .contact-detail {
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 2;
+  }
+  .contact-detail a { color: var(--gold); text-decoration: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
     text-align: center;
+    padding: 2rem 2.5rem;
+    font-size: 0.82rem;
+    color: var(--muted);
   }
-  .m-xlarge {
-    font-size: 100px;
-  }
-   .m-muoto {
-    
-    float: left;
-   border-radius: 50%; 
-   margin: 0 25px 5px 0;
-   float: left;
-   
-   
-   }
-  .m-circle {
-    -webkit-shape-outside: ellipse(50px 100px at 50% 50%);   
-   shape-outside: ellipse(50px 100px at 50% 50%);
-   width: 60%; /* Määrittele tekstiosuuden leveys */
-  float: right; }
 
-    @media (max-width: 768px) {
-  #animated-text {
-    display: none !important;
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.78rem; }
+    #hero { padding: 7rem 1.5rem 3rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img-wrap { max-width: 320px; }
+    .yrittaja-grid { grid-template-columns: 1fr; }
+    #yrittajille { padding: 2.2rem 1.5rem; }
+    .hero-stats { gap: 2rem; }
+    #skills, #projects { padding: 4rem 0; }
   }
-}
 
-  
-#webchat .bpWebchat {
-        position: unset;
-        width: 100%;
-        height: 100%;
-        max-height: 100%;
-        max-width: 100%;
-      }
-    
-      #webchat .bpFab {
-        display: none;
-      }
+  @media (prefers-reduced-motion: reduce) {
+    #rotating-role { animation: none; }
+    .skill-card, .project-card, .btn-primary { transition: none; }
+  }
 </style>
 </head>
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="m-top">
-  <div class="m-bar" id="myNavbar">
-    <a href="javascript:void(0);" class="m-button m-hover-black m-hide-medium m-hide-large m-right" onclick="toggleFunction()" title="Toggle Navigation Menu">
-     
-    </a>
-   
-    <a href="#about" class="m-button m-hide-small"><i class="fa fa-user"></i> MAARIT</a>
-    <a href="#portfolio" class="m-button m-hide-small"><i class="fa fa-th"></i> OSAAMINEN</a>
-    <a href="#contact" class="m-button m-hide-small"><i class="fa fa-envelope"></i> YHTEYS</a>
-    <a href="#" class="m-button m-hide-small m-right m-hover-red">
-      <i class="fa fa-search"></i>
-    </a>
-  </div> s 
-</div>
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="m-bar-block m-white m-hide m-hide-large m-hide-medium">
-    <a href="#about" class="m-bar-item m-button" onclick="toggleFunction()">MAARIT</a>
-    <a href="#portfolio" class="m-bar-item m-button" onclick="toggleFunction()">OSAAMINEN</a>
-    <a href="#contact" class="m-bar-item m-button" onclick="toggleFunction()">YHTEYS</a>
-    <a href="#" class="m-bar-item m-button">SEARCH</a>
-  </div>
-</div>
-<!-- First Parallax Image  -->
-<div class="bgimg-1 m-display-container m-opacity-min" id="home">
-  <div class="m-display-middle" style="white-space:nowrap;">
-    <span class="m-center m-padding m-wide m-animate-opacity" style="font-size: 70px"><div class="handwriting-container">
-      <span id="animated-text"></span>
-  </div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">MH</a>
+  <ul class="nav-links">
+    <li><a href="#about">Minusta</a></li>
+    <li><a href="#skills">Osaaminen</a></li>
+    <li><a href="#experience">Kokemus</a></li>
+    <li><a href="#projects">Projektit</a></li>
+    <li><a href="#yrittajille">Yrittäjille</a></li>
+    <li><a href="#contact">Yhteys</a></li>
+  </ul>
+</nav>
 
-  <script src="/script.js"></script> <span class="m-hide-small"></span>
-  </div>
-</div>
-
-<!-- Container (About Section) -->
-<div class="m-content m-container m-padding-64" id="about">
-  
-  
-  <div class="m-row">
-    <div class="m-col m6 m-center m-padding-large">
-      <!-- <p><b><i class="fa fa-user m-margin-right"></i>MAARIT</b></p><br> -->
-      <img src="kuvat/profiilikuva_maarit_hurskainen.jpg" class="m-round m-image m-hover-opacity-off m-muoto" alt="Photo of Me" width="500" height="333">
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-line"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">ICT-perustutkinto 2026 · Joensuu</div>
+    <h1 class="hero-name">Maarit<br><span>Hurskainen</span></h1>
+    <div class="hero-role-wrap">
+      Olen <span id="rotating-role"></span>
     </div>
+    <p class="hero-desc">
+      Taloushallinnon ammattilainen joka on kääntänyt kurssin IT-alalle — 10+ vuoden asiakaspalvelukokemus, vuosi automaatiotestausta ja aito into koodaamiseen.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Ota yhteyttä</a>
+      <a href="#skills" class="btn-ghost">Katso osaaminen</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">10+</div>
+        <div class="hero-stat-label">Vuotta asiakaspalvelussa</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">1 000+</div>
+        <div class="hero-stat-label">Tuntia Robot Frameworkia</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">6+</div>
+        <div class="hero-stat-label">Vuotta taloushallintoa</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Hide this text on small devices -->
-    <div class="m-col m6 m-hide-small m-padding-large m-circle right">
-      <h2><b></b>Hei, olen Maarit</b></h2>
-      <em><b>Monipuolinen osaaja Joensuusta</b></em>
-      <p>Olen ohjelmointiin hurahtanut opiskelija, jonka tausta löytyy taloushallinnosta. Tämä sivusto toimii portfoliona, jossa esittelen osaamistani koodauksen sekä muiden taitojeni saralla.
-        <br>
-        <br>
-        Olen vasta äskettäin löytänyt innostuksen koodaamiseen, ja se on vienyt minut täysin mukanaan. Minulle tärkeitä arvoja ovat luovuus, jatkuva oppiminen ja monipuolisuus.
-        <br>
-        <br>
-        Arvokasta kokemusta olen saanut tehdessäni pieniä projekteja, kuten applikaatioita, sekä ollessani puoli vuotta työharjoittelussa automaatiotestaustiimissä.
-        <br>
-        <br>
-        Vapaa-aikana nautin luonnossa liikkumisesta, valokuvaamisesta, maalaamisesta ja shakin pelaamisesta.  
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <img src="https://maarithurska.github.io/kuvat/profiilikuva_maarit_hurskainen.jpg" alt="Maarit Hurskainen">
+      <div class="about-img-badge">Valmistunut 2026 ✓</div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Minusta</div>
+      <h2 class="section-title">Kahden maailman osaaja</h2>
+      <p>
+        Taustani <strong>taloushallinnossa ja asiakaspalvelussa</strong> tekee minusta erilaisen IT-tekijän: ymmärrän liiketoiminnan tarpeet ja osaan kommunikoida myös teknisesti haastavan asian selkeästi.
       </p>
+      <p>
+        Valmistuin <strong>ICT-perustutkinnosta</strong> 2025 ja hankin puolen vuoden työkokemuksen <strong>automaatiotestauksesta</strong>. Robot Framework on tullut tutuksi yli tuhannella tunnilla.
+      </p>
+      <p>
+        Haen nyt ensimmäistä IT-alan vakituista paikkaa — erityisesti <strong>help desk, testaus tai web-ylläpito</strong> kiinnostavat.
+      </p>
+      <ul class="highlight-list">
+        <li>Sertifioitu englannin kielen taito (B2)</li>
+        <li>Harjoittelukokemus automaatiotestauksesta</li>
+        <li>Luovan työn harrastajana silmää yksityiskohdille (valokuvaus, maalaus)</li>
+        <li>Shakin pelaajana analyyttistä ajattelua</li>
+      </ul>
     </div>
   </div>
-  
-  <div class="custom-background">
-    <h3 class="m-center">Kokemus</h3>
-    <p class="m-wide"><i class="fa fa-user" aria-hidden="true"></i>Asiakaspalvelu</p>
-    <div class="m-light-grey">
-      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:">+10 vuotta</div>
-      
-  </div>
-    <p class="m-wide"><i class="fa fa-money" aria-hidden="true"></i>Taloushallinto</p>
-    <div class="m-light-grey">
-      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:60%">+6 vuotta</div>
-      
-  </div>
-    <p class="m-wide"><i class="fa fa-camera"></i>Valokuvaus</p>
-    <div class="m-light-grey">
-      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:50%">+5 vuotta</div>
+</section>
 
-    </div>
-    <p class="m-wide"><i class="fa fa-laptop"></i>Ohjelmointi</p>
-    <div class="m-light-grey">
-      <div class="m-container m-padding-small dark-grey m-center skill-level" style="width:15%">+1v</div>
-    </div>
+<hr class="divider">
 
-<div class="=custom-background1">
-    <div class="m-row">
-      <div class="m-col m-quarter m-section">
-        <span class="m-xlarge">+ 1000 tuntia</span><br>
-        Robot Framework
+<!-- SKILLS -->
+<div id="skills">
+  <div class="skills-header">
+    <div class="section-label">Osaaminen</div>
+    <h2 class="section-title">Mitä osaan tehdä</h2>
+    <p class="section-desc">Monipuolinen työkalusetti rakentuu taloushallinnon, testauksen ja web-kehityksen ympärille.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-icon">🛠️</div>
+      <h3>Help Desk & Tuki</h3>
+      <p>Asiakaspalvelun ammattilaisena ratkaisen ongelmat nopeasti ja selkeästi. Kärsivällisyyttä ja empatiaa riittää myös vähemmän teknisille käyttäjille.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Ongelmanratkaisu</span>
+        <span class="skill-tag">Asiakaspalvelu</span>
+        <span class="skill-tag">Office 365</span>
+        <span class="skill-tag">Tikettijärjestelmät</span>
       </div>
-      <div class="m-col m-quarter m-section">
-        <span class="m-xlarge">+700 tuntia</span><br>
-        HTML & CSS
-      </div>
-      <div class="m-col m-quarter m-section">
-        <span class="m-xlarge">+500 tuntia</span><br>
-        Python
     </div>
-    <div class="m-col m-quarter m-section">
-      <span class="m-xlarge">+200 tuntia</span><br>
-      React
-  </div>
-  </div>
-  
-  
-  
-  <div class="m-content">
-    <!-- Content after the custom background -->
-  </div>
-  
+    <div class="skill-card">
+      <div class="skill-card-icon">🤖</div>
+      <h3>Automaatiotestaus</h3>
+      <p>Puolen vuoden harjoittelu automaatiotestauksessa antoi käytännön kokemuksen Robot Frameworkilla testaamisesta oikeassa tuotantotiimissä.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Robot Framework</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">DevOps</span>
+        <span class="skill-tag">Git</span>
       </div>
-
-    <div class="m-content">
     </div>
-      <!-- Content before the custom background -->
+    <div class="skill-card">
+      <div class="skill-card-icon">🌐</div>
+      <h3>Web-kehitys & -ylläpito</h3>
+      <p>Rakennan ja ylläpidän verkkosivuja HTML:llä, CSS:llä ja WordPressillä. Sivujen päivitys, testaus ja pienet muutokset sujuvat itsenäisesti.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML & CSS</span>
+        <span class="skill-tag">WordPress</span>
+        <span class="skill-tag">React (opettelen)</span>
+        <span class="skill-tag">Python</span>
+      </div>
     </div>
-  </div>
-  
-<!-- Second Parallax Image with Osaaminen Text -->
-<div class="bgimg-2 m-display-container m-opacity-min">
-  <div class="m-display-middle">
-    <span class="m-xxlarge m-text-white m-wide">TAIDOT</span>
-  </div>
-</div>
-
-
-<!-- Container (Osaamien Section) -->
-<div class="m-content m-container m-padding-64" id="portfolio">
-  <h3 class="m-center">Osaaminen</h3>
-  <p class="m-center"><em>Näitä olen käyttänyt<br></em></p><br>
-
-  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="m-container m-light-coral m-card-4 m-padding-32">
-    <div class="m-row">
-      <div class="m-container m-third">
-        <h5 class="m-bottombar m-border-vihrea">Hyvin hallussa</h5>
-        <p>Office ohjelmat</p>
-        <p>Visual Studio Code</p>
-        <p>Wordpress</p>
-      </div>
-      <div class="m-container m-third">
-        <h5 class="m-bottombar m-border-koralli">Osaaja</h5>
-        <p>Jenkins</p>
-        <p>DevOps</p>
-        <p>Git</p>
-        <p>Ketterä kehitys</p>
-        <p></p>
-      </div>
-      <div class="m-container m-third">
-        <h5 class="m-bottombar m-border-primary">Opettelen</h5>
-        <p>Docker</p>
-        <p>Azure</p>
-        <p>MySQL</p>
-        <p>MongoDB</p>
-        <p></p>
+    <div class="skill-card">
+      <div class="skill-card-icon">📊</div>
+      <h3>Taloushallinto & Toimisto</h3>
+      <p>Kuusi vuotta taloushallinnon kokemusta tuo luotettavuutta ja tarkkuutta. Office-ohjelmat ovat hallussa syvällisesti.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">Excel</span>
+        <span class="skill-tag">Word</span>
+        <span class="skill-tag">PowerPoint</span>
+        <span class="skill-tag">Kirjanpito</span>
       </div>
     </div>
   </div>
 
-  <!-- Lisää clear-fix ennen koulutus -->
-<div style="clear: both;"></div>
-
-  <!-- Left Column -->
-  <div class="m-third">
-    
-    <div class="m-white m-text-grey m-card-4">
-      <div class="m-display-container">
-        <div class="m-display-bottomleft m-container m-text-black">
-        </div>
-      </div>
-      <div class="m-container">
-        
-        <br>
-
-        <p class="m-large m-text-theme"><b><i class="fa fa-globe fa-fw m-margin-right"></i>Kielet</b></p>
-        <p>Suomi</p>
-        <div class="m-light-grey m-round-xlarge">
-          <div class="m-round-xlarge m-koralli" style="height:24px;width:100%"></div>
-        </div>
-        <p>Englanti (B2 sertifioitu)</p>
-        <div class="m-light-grey m-round-xlarge">
-          <div class="m-round-xlarge m-koralli" style="height:24px;width:60%"></div>
-        </div>
-        <p>Ruotsi</p>
-        <div class="m-light-grey m-round-xlarge">
-          <div class="m-round-xlarge m-koralli" style="height:24px;width:25%"></div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
-    </div><br>
-
-  <!-- End Left Column -->
-  </div>
-
-  <!-- Right Column -->
-  <div class="m-twothird">
-    
-    <div class="m-container m-card m-white m-margin-bottom">
-      <h2 class="m-text-grey m-padding-16"><i class="fa fa-suitcase fa-fw m-margin-right m-xxlarge m-koralli"></i>Koulutus</h2>
-      <div class="m-container">
-        <h5 class="m-opacity"><b>Riveria/Ohjelmoija</b></h5>
-        <h6 class="m-text-koralli"><i class="fa fa-calendar fa-fw m-margin-right"></i>2024 - <span class="m-tag m-koralli m-round">2025</span></h6>
-        <p>Ohjelmoinnin perusteet. Valmistuminen 2025.</p>
-        <hr>
-      </div>
-      <div class="m-container">
-        <h5 class="m-opacity"><b>Helsinki Business College/Merkonomi</b></h5>
-        <h6 class="m-text-koralli"><i class="fa fa-calendar fa-fw m-margin-right"></i>2009 - 2012</h6>
-        <p>Liiketalouden perustutkinto.</p>
-        <hr>
+  <div class="tools-section">
+    <div class="tools-row">
+      <div class="tools-row-label">Hyvin hallussa</div>
+      <div class="tools-chips">
+        <span class="tool-chip">Visual Studio Code</span>
+        <span class="tool-chip">WordPress</span>
+        <span class="tool-chip">Office 365</span>
+        <span class="tool-chip">Git</span>
+        <span class="tool-chip">Robot Framework</span>
       </div>
     </div>
-
-
-  <!-- End Right Column -->
-  </div>
-
-  
-<!-- Lisää clear-fix ennen bgimg-3 -->
-<div style="clear: both;"></div>
-
-<div class="m-content">
-  <!-- Content after the custom background -->
-</div>
-</div>
-  <div class="m-content">
-  </div>
-    <!-- Content before the custom background -->
-  </div>
-</div>
-<!-- Third Parallax Image with Portfolio Text -->
-<div class="bgimg-3 m-display-container m-opacity-min">
-  <div class="m-display-middle">
-     <span class="m-xxlarge m-text-white m-wide">YHTEYS</span>
-  </div>
-</div>
-
-
-
-<!-- Container (Contact Section) -->
-<div class="m-content m-container m-padding-64" id="contact">
-  <h3 class="m-center">Kiinnostuitko?</h3>
-  <p class="m-center"><em>Ota yhteyttä niin
-  <br>sovitaan tapaaminen <i class="fa fa-coffee"></i></em></p>
-
-  <div class="m-row m-padding-32 m-section">
-    <div class="m-col m4 m-container">
-      
-    </div>
-    <div class="m-col m8 m-panel">
-      <div class="m-large m-margin-bottom">
-        <i class="fa fa-map-marker fa-fw m-hover-text-black m-xlarge"></i> Joensuu<br>
-        <i class="fa fa-envelope fa-fw m-hover-text-black m-xlarge"></i> Sähköposti: hello@maarithurskainen.com<br>
+    <div class="tools-row">
+      <div class="tools-row-label">Osaaja</div>
+      <div class="tools-chips">
+        <span class="tool-chip">Jenkins</span>
+        <span class="tool-chip">DevOps</span>
+        <span class="tool-chip">Python</span>
+        <span class="tool-chip">Ketterä kehitys</span>
+        <span class="tool-chip">HTML & CSS</span>
       </div>
-      
+    </div>
+    <div class="tools-row">
+      <div class="tools-row-label">Opettelen</div>
+      <div class="tools-chips">
+        <span class="tool-chip">Docker</span>
+        <span class="tool-chip">Azure</span>
+        <span class="tool-chip">MySQL</span>
+        <span class="tool-chip">MongoDB</span>
+        <span class="tool-chip">React</span>
+      </div>
     </div>
   </div>
 </div>
 
+<hr class="divider">
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Kokemus & Koulutus</div>
+  <h2 class="section-title">Polku tähän hetkeen</h2>
 
-
-<!-- Footer -->
-<footer class="m-center m-persikka m-padding-64 m-opacity m-hover-opacity-off">
-  <a href="#home" class="m-button m-koralli"><i class="fa fa-arrow-up m-margin-right"></i>Sivun alkuun</a>
-  <div class="m-xlarge m-section">
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-period">2024 – 2026</div>
+      <div class="timeline-title">ICT-perustutkinto, Ohjelmoija</div>
+      <div class="timeline-org">Riveria</div>
+      <div class="timeline-desc">Ohjelmoinnin perusteet, web-kehitys, automaatiotestaus. Sisälsi puolen vuoden työharjoittelun automaatiotestauksessa, jossa pääsin työskentelemään oikeassa kehitystiimissä Robot Frameworkin parissa yli 1 000 tunnin edestä.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-period">Useita vuosia</div>
+      <div class="timeline-title">Asiakaspalvelu & Taloushallinto</div>
+      <div class="timeline-org">Eri työnantajat</div>
+      <div class="timeline-desc">Yli 10 vuotta asiakaspalvelussa ja yli 6 vuotta taloushallinnossa kasvattivat vahvan kommunikaatio- ja ongelmanratkaisukyvyn — taidot, jotka siirtyvät suoraan IT-ympäristöön.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-period">2009 – 2012</div>
+      <div class="timeline-title">Merkonomi, Liiketalous</div>
+      <div class="timeline-org">Helsinki Business College</div>
+      <div class="timeline-desc">Liiketalouden perustutkinto antoi pohjan talousosaamiselle ja organisaation ymmärtämiselle.</div>
+    </div>
   </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<div id="projects">
+  <div class="projects-header">
+    <div class="section-label">Projektit</div>
+    <h2 class="section-title">Mitä olen rakentanut</h2>
+    <p class="section-desc">Tänne tulee esimerkkejä omista projekteistasi — lisää linkki GitHubiin tai kuvaile mitä olet tehnyt.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-type">Portfolio</div>
+      <h3>Tämä sivusto</h3>
+      <p>Rakennettu HTML:llä, CSS:llä ja JavaScriptillä ilman valmiita teemoja tai frameworkeja. Responsiivinen ja saavutettava.</p>
+      <a href="https://github.com/maarithurska" class="project-link">GitHub →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-type">Harjoitustyö · AI / Python</div>
+      <h3>AI-asiakastukibotti</h3>
+      <p>Rakensin asiakastukibotin käyttäen OpenAI API:a. Botti vastaa käyttäjän kysymyksiin luonnollisella kielellä ja sopii esimerkiksi pienten yritysten verkkosivuille. Toteutettu Pythonilla.</p>
+      <a href="https://github.com/maarithurska" class="project-link">Katso GitHub →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-type">Tulossa</div>
+      <h3>Yksinyrittäjän kotisivupaketti</h3>
+      <p>Suunnittelen selkeän ja edullisen kotisivupaketin yksinyrittäjille — nopea toimitusaika, ei turhia lisämaksuja, helposti päivitettävä.</p>
+      <a href="#contact" class="project-link">Kiinnostuitko? →</a>
+    </div>
+  </div>
+</div>
+
+<!-- YRITTÄJILLE -->
+<div id="yrittajille">
+  <div class="section-label">Palvelu yrittäjille</div>
+  <h2 class="section-title">Tarvitsetko kohtuuhintaiset kotisivut?</h2>
+  <p class="section-desc">Rakennan yksinkertaiset, selkeät ja toimivat kotisivut yksinyrittäjille — ilman turhia kuluja tai monimutkaisia sopimuksia.</p>
+  <div class="yrittaja-grid">
+    <div class="yrittaja-item">
+      <h4>Nopea toimitusaika</h4>
+      <p>Yksinkertaiset sivut valmiiksi 1–2 viikossa. Ei odottelua, ei välikäsiä.</p>
+    </div>
+    <div class="yrittaja-item">
+      <h4>Selkeä hinnoittelu</h4>
+      <p>Sovitaan hinta etukäteen. Ei yllätyksiä tai tuntivelotuksia pienistä muutoksista.</p>
+    </div>
+    <div class="yrittaja-item">
+      <h4>Helppo ylläpitää</h4>
+      <p>Opetan käyttämään sivuja itse, jos haluat. Tai hoidan päivitykset puolestasi.</p>
+    </div>
+    <div class="yrittaja-item">
+      <h4>Mobiiliystävällinen</h4>
+      <p>Sivut toimivat moitteettomasti kaikilla laitteilla — puhelimella, tabletilla ja tietokoneella.</p>
+    </div>
+  </div>
+  <div style="margin-top:2.5rem;">
+    <a href="#contact" class="btn-primary">Kysy tarjous</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Yhteys</div>
+  <h2 class="section-title">Jutellaan!</h2>
+  <p class="section-desc">Haen töitä help deskin, testauksen tai web-ylläpidon parista — tai kenties juuri sinun tarvitsemassasi roolissa.</p>
+  <div class="contact-links">
+    <a href="mailto:tm.pihlajaniemi@gmail.com" class="btn-primary">Lähetä sähköpostia</a>
+    <a href="https://linkedin.com/in/maarithurskainen" class="btn-ghost" target="_blank">LinkedIn</a>
+    <a href="https://github.com/maarithurska" class="btn-ghost" target="_blank">GitHub</a>
+  </div>
+  <div class="contact-detail">
+    📍 Joensuu &nbsp;·&nbsp; <a href="mailto:tm.pihlajaniemi@gmail.com">tm.pihlajaniemi@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Maarit Hurskainen · Rakennettu käsin HTML & CSS:llä
 </footer>
- 
+
 <script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+  const roles = [
+    'help desk -osaaja',
+    'automaatiotestaaja',
+    'web-kehittäjä',
+    'WordPress-ylläpitäjä',
+    'IT-tukihenkilö'
+  ];
+  let ri = 0, ci = 0, deleting = false;
+  const el = document.getElementById('rotating-role');
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "m-bar" + " m-card" + " m-animate-top" + " m-white";
+  function type() {
+    const current = roles[ri];
+    if (!deleting) {
+      el.textContent = current.slice(0, ci + 1);
+      ci++;
+      if (ci === current.length) {
+        deleting = true;
+        setTimeout(type, 2000);
+        return;
+      }
     } else {
-        navbar.className = navbar.className.replace(" m-card m-animate-top m-white", "");
+      el.textContent = current.slice(0, ci - 1);
+      ci--;
+      if (ci === 0) {
+        deleting = false;
+        ri = (ri + 1) % roles.length;
+      }
     }
-}
+    setTimeout(type, deleting ? 60 : 90);
+  }
+  type();
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("m-show") == -1) {
-        x.className += " m-show";
-    } else {
-        x.className = x.className.replace(" m-show", "");
-    }
-}
+  // Smooth scroll & active nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 </script>
-    
-
-
 </body>
 </html>
