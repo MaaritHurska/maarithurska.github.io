@@ -22,16 +22,9 @@
   }
 
   html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.7; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--body);
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
@@ -40,377 +33,119 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo {
-    font-family: var(--display);
-    font-size: 1.25rem;
-    color: var(--gold);
-    text-decoration: none;
-    letter-spacing: 0.02em;
-  }
+  .nav-logo { font-family: var(--display); font-size: 1.25rem; color: var(--gold); text-decoration: none; letter-spacing: 0.02em; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 8rem 2.5rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-bg-line {
-    position: absolute; top: 0; right: 0;
-    width: 50%; height: 100%;
-    background: linear-gradient(135deg, transparent 60%, rgba(232,168,48,0.04) 100%);
-    pointer-events: none;
-  }
+  /* HERO */
+  #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden; }
+  .hero-bg-line { position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(135deg, transparent 60%, rgba(232,168,48,0.04) 100%); pointer-events: none; }
   .hero-content { max-width: 720px; }
-  .hero-eyebrow {
-    display: inline-block;
-    font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(232,168,48,0.3);
-    padding: 0.3rem 0.9rem;
-    border-radius: 2px;
-    margin-bottom: 1.8rem;
-  }
-  .hero-name {
-    font-family: var(--display);
-    font-size: clamp(2.8rem, 6vw, 5.2rem);
-    font-weight: 900;
-    line-height: 1.08;
-    margin-bottom: 1rem;
-    color: var(--text);
-  }
+  .hero-eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(232,168,48,0.3); padding: 0.3rem 0.9rem; border-radius: 2px; margin-bottom: 1.8rem; }
+  .hero-name { font-family: var(--display); font-size: clamp(2.8rem, 6vw, 5.2rem); font-weight: 900; line-height: 1.08; margin-bottom: 1rem; color: var(--text); }
   .hero-name span { color: var(--gold); }
-  .hero-role-wrap {
-    font-family: var(--display);
-    font-size: clamp(1.3rem, 2.5vw, 1.9rem);
-    color: var(--muted);
-    margin-bottom: 2rem;
-    min-height: 2.4rem;
-  }
-  #rotating-role {
-    color: var(--text);
-    border-right: 2px solid var(--gold);
-    padding-right: 4px;
-    animation: blink 0.8s step-end infinite;
-  }
+  .hero-role-wrap { font-family: var(--display); font-size: clamp(1.3rem, 2.5vw, 1.9rem); color: var(--muted); margin-bottom: 2rem; min-height: 2.4rem; }
+  #rotating-role { color: var(--text); border-right: 2px solid var(--gold); padding-right: 4px; animation: blink 0.8s step-end infinite; }
   @keyframes blink { 50% { border-color: transparent; } }
-  .hero-desc {
-    font-size: 1.08rem;
-    color: var(--muted);
-    max-width: 540px;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-  }
+  .hero-desc { font-size: 1.08rem; color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; line-height: 1.8; }
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--gold);
-    color: #0F1624;
-    font-family: var(--body);
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    padding: 0.85rem 2rem;
-    border: none; border-radius: 3px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    cursor: pointer;
-    display: inline-block;
-  }
+  .btn-primary { background: var(--gold); color: #0F1624; font-family: var(--body); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.04em; padding: 0.85rem 2rem; border: none; border-radius: 3px; text-decoration: none; transition: background 0.2s, transform 0.15s; cursor: pointer; display: inline-block; }
   .btn-primary:hover { background: var(--gold-dim); transform: translateY(-1px); }
-  .btn-ghost {
-    background: transparent;
-    color: var(--text);
-    font-family: var(--body);
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    padding: 0.85rem 2rem;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    text-decoration: none;
-    transition: border-color 0.2s, color 0.2s;
-    display: inline-block;
-  }
+  .btn-ghost { background: transparent; color: var(--text); font-family: var(--body); font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; padding: 0.85rem 2rem; border: 1px solid var(--border); border-radius: 3px; text-decoration: none; transition: border-color 0.2s, color 0.2s; display: inline-block; }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .hero-stat-num { font-family: var(--display); font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+  .hero-stat-label { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 0.3rem; }
 
-  .hero-stats {
-    display: flex; gap: 3rem; margin-top: 4rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-  .hero-stat-num {
-    font-family: var(--display);
-    font-size: 2.2rem; font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .hero-stat-label {
-    font-size: 0.82rem; color: var(--muted);
-    letter-spacing: 0.05em; text-transform: uppercase;
-    margin-top: 0.3rem;
-  }
-
-  /* ── SECTIONS ── */
+  /* SECTIONS */
   section { padding: 6rem 2.5rem; max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 600;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.7rem;
-  }
-  .section-title {
-    font-family: var(--display);
-    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.2rem;
-    color: var(--text);
-  }
-  .section-desc {
-    font-size: 1.05rem; color: var(--muted);
-    max-width: 560px; line-height: 1.8;
-    margin-bottom: 3rem;
-  }
+  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .section-title { font-family: var(--display); font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; color: var(--text); }
+  .section-desc { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.8; margin-bottom: 3rem; }
   .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
 
-  /* ── ABOUT ── */
+  /* ABOUT */
   #about { padding-top: 0; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-  .about-img-wrap {
-    position: relative;
-  }
-  .about-img-wrap img {
-    width: 100%; border-radius: 4px;
-    display: block;
-    filter: grayscale(20%);
-  }
-  .about-img-badge {
-    position: absolute; bottom: -1rem; right: -1rem;
-    background: var(--gold);
-    color: #0F1624;
-    font-weight: 700;
-    font-size: 0.82rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.7rem 1.2rem;
-    border-radius: 2px;
-  }
+  .about-img-wrap { position: relative; }
+  .about-img-wrap img { width: 100%; border-radius: 4px; display: block; filter: grayscale(20%); }
+  .about-img-badge { position: absolute; bottom: -1rem; right: -1rem; background: var(--gold); color: #0F1624; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.7rem 1.2rem; border-radius: 2px; }
   .about-text p { color: var(--muted); margin-bottom: 1.2rem; line-height: 1.85; }
   .about-text p strong { color: var(--text); }
   .highlight-list { list-style: none; margin-top: 1.5rem; }
-  .highlight-list li {
-    display: flex; align-items: flex-start; gap: 0.7rem;
-    color: var(--muted); margin-bottom: 0.8rem; font-size: 0.97rem;
-  }
-  .highlight-list li::before {
-    content: '→';
-    color: var(--gold);
-    flex-shrink: 0;
-    margin-top: 0.05rem;
-  }
+  .highlight-list li { display: flex; align-items: flex-start; gap: 0.7rem; color: var(--muted); margin-bottom: 0.8rem; font-size: 0.97rem; }
+  .highlight-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; margin-top: 0.05rem; }
 
-  /* ── SKILLS ── */
+  /* SKILLS */
   #skills { background: var(--bg2); max-width: 100%; padding: 6rem 0; }
-  #skills > * { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
   .skills-header { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 3rem; }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-  }
-  .skill-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.8rem;
-    transition: border-color 0.2s, transform 0.2s;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+  .skill-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 1.8rem; transition: border-color 0.2s, transform 0.2s; }
   .skill-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .skill-card-icon {
-    font-size: 1.6rem; margin-bottom: 1rem;
-  }
-  .skill-card h3 {
-    font-family: var(--display);
-    font-size: 1.15rem; font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-  .skill-card p {
-    font-size: 0.9rem; color: var(--muted); line-height: 1.65;
-    margin-bottom: 1.2rem;
-  }
+  .skill-card-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+  .skill-card h3 { font-family: var(--display); font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+  .skill-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.2rem; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .skill-tag {
-    font-size: 0.75rem; font-weight: 500;
-    letter-spacing: 0.05em;
-    background: rgba(232,168,48,0.1);
-    color: var(--gold);
-    border: 1px solid rgba(232,168,48,0.25);
-    padding: 0.25rem 0.65rem;
-    border-radius: 2px;
-  }
+  .skill-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; background: rgba(232,168,48,0.1); color: var(--gold); border: 1px solid rgba(232,168,48,0.25); padding: 0.25rem 0.65rem; border-radius: 2px; }
 
-  /* tool bars */
+  /* TOOLS */
   .tools-section { max-width: 1100px; margin: 3rem auto 0; padding: 0 2.5rem; }
   .tools-row { margin-bottom: 2rem; }
-  .tools-row-label {
-    font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.9rem;
-  }
+  .tools-row-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
   .tools-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-  .tool-chip {
-    font-size: 0.85rem; font-weight: 400;
-    background: var(--bg);
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 0.35rem 0.85rem;
-    border-radius: 2px;
-  }
+  .tool-chip { font-size: 0.85rem; font-weight: 400; background: var(--bg); color: var(--text); border: 1px solid var(--border); padding: 0.35rem 0.85rem; border-radius: 2px; }
 
-  /* ── TIMELINE ── */
-  #experience { }
+  /* AI SECTION */
+  #ai { max-width: 100%; padding: 6rem 0; background: var(--bg); }
+  .ai-header { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 3rem; }
+  .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; align-items: start; }
+  .ai-intro { font-size: 1.05rem; color: var(--muted); line-height: 1.85; }
+  .ai-intro p { margin-bottom: 1.2rem; }
+  .ai-intro p strong { color: var(--text); }
+  .ai-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .ai-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 1.4rem 1.6rem; display: flex; gap: 1.2rem; align-items: flex-start; transition: border-color 0.2s; }
+  .ai-card:hover { border-color: var(--gold); }
+  .ai-card-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .ai-card h4 { font-weight: 600; color: var(--text); font-size: 0.97rem; margin-bottom: 0.3rem; }
+  .ai-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+  .ai-tools-row { max-width: 1100px; margin: 2.5rem auto 0; padding: 0 2.5rem; }
+  .ai-tools-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
+  .ai-chip { font-size: 0.82rem; font-weight: 500; background: rgba(232,168,48,0.08); color: var(--gold); border: 1px solid rgba(232,168,48,0.2); padding: 0.3rem 0.8rem; border-radius: 2px; }
+
+  /* TIMELINE */
   .timeline { position: relative; padding-left: 2rem; margin-top: 1rem; }
-  .timeline::before {
-    content: '';
-    position: absolute; left: 0; top: 0.5rem; bottom: 0;
-    width: 1px; background: var(--border);
-  }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0; width: 1px; background: var(--border); }
   .timeline-item { position: relative; margin-bottom: 3rem; }
-  .timeline-item::before {
-    content: '';
-    position: absolute; left: -2.45rem; top: 0.45rem;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--gold);
-  }
-  .timeline-period {
-    font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.4rem;
-  }
-  .timeline-title {
-    font-family: var(--display);
-    font-size: 1.2rem; font-weight: 700;
-    color: var(--text); margin-bottom: 0.2rem;
-  }
-  .timeline-org {
-    font-size: 0.9rem; color: var(--muted); margin-bottom: 0.7rem;
-  }
+  .timeline-item::before { content: ''; position: absolute; left: -2.45rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 2px solid var(--gold); }
+  .timeline-period { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .timeline-title { font-family: var(--display); font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+  .timeline-org { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.7rem; }
   .timeline-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
 
-  /* ── PROJECTS ── */
+  /* PROJECTS */
   #projects { background: var(--bg2); max-width: 100%; padding: 6rem 0; }
-  #projects .projects-header { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 3rem; }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-  }
-  .project-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2rem;
-    transition: border-color 0.2s;
-    display: flex; flex-direction: column;
-  }
+  .projects-header { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem 3rem; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+  .project-card { background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 2rem; transition: border-color 0.2s; display: flex; flex-direction: column; }
   .project-card:hover { border-color: var(--gold); }
-  .project-type {
-    font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 0.7rem;
-  }
-  .project-card h3 {
-    font-family: var(--display);
-    font-size: 1.2rem; font-weight: 700;
-    color: var(--text); margin-bottom: 0.6rem;
-  }
-  .project-card p {
-    font-size: 0.92rem; color: var(--muted);
-    line-height: 1.7; flex: 1; margin-bottom: 1.4rem;
-  }
-  .project-link {
-    font-size: 0.85rem; font-weight: 600;
-    color: var(--gold); text-decoration: none;
-    letter-spacing: 0.04em;
-    transition: opacity 0.2s;
-    align-self: flex-start;
-  }
+  .project-type { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.7rem; }
+  .project-card h3 { font-family: var(--display); font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+  .project-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 1.4rem; }
+  .project-link { font-size: 0.85rem; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; align-self: flex-start; }
   .project-link:hover { opacity: 0.7; }
 
-  /* ── FOR ENTREPRENEURS ── */
-  #yrittajille {
-    border: 1px solid rgba(232,168,48,0.25);
-    border-radius: 6px;
-    background: linear-gradient(135deg, var(--bg2) 0%, rgba(232,168,48,0.04) 100%);
-    padding: 3.5rem;
-    max-width: 1100px;
-    margin: 0 auto 6rem;
-  }
-  #yrittajille .section-title { margin-bottom: 0.8rem; }
-  .yrittaja-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 4rem;
-    margin-top: 2rem;
-  }
-  .yrittaja-item h4 {
-    font-weight: 600; color: var(--text);
-    margin-bottom: 0.4rem; font-size: 1rem;
-  }
-  .yrittaja-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.7; }
-
-  /* ── CONTACT ── */
-  #contact {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 6rem 2.5rem;
-    text-align: center;
-  }
+  /* CONTACT */
+  #contact { max-width: 700px; margin: 0 auto; padding: 6rem 2.5rem; text-align: center; }
   #contact .section-title { margin-bottom: 1rem; }
   #contact .section-desc { margin: 0 auto 2.5rem; max-width: 440px; }
   .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .contact-detail {
-    margin-top: 2.5rem;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 2;
-  }
+  .contact-detail { margin-top: 2.5rem; font-size: 0.9rem; color: var(--muted); line-height: 2; }
   .contact-detail a { color: var(--gold); text-decoration: none; }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    text-align: center;
-    padding: 2rem 2.5rem;
-    font-size: 0.82rem;
-    color: var(--muted);
-  }
+  footer { border-top: 1px solid var(--border); text-align: center; padding: 2rem 2.5rem; font-size: 0.82rem; color: var(--muted); }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.2rem; }
     .nav-links { gap: 1.2rem; }
@@ -419,12 +154,9 @@
     section { padding: 4rem 1.5rem; }
     .about-grid { grid-template-columns: 1fr; }
     .about-img-wrap { max-width: 320px; }
-    .yrittaja-grid { grid-template-columns: 1fr; }
-    #yrittajille { padding: 2.2rem 1.5rem; }
-    .hero-stats { gap: 2rem; }
-    #skills, #projects { padding: 4rem 0; }
+    .ai-grid { grid-template-columns: 1fr; }
+    #skills, #projects, #ai { padding: 4rem 0; }
   }
-
   @media (prefers-reduced-motion: reduce) {
     #rotating-role { animation: none; }
     .skill-card, .project-card, .btn-primary { transition: none; }
@@ -439,9 +171,9 @@
   <ul class="nav-links">
     <li><a href="#about">Minusta</a></li>
     <li><a href="#skills">Osaaminen</a></li>
+    <li><a href="#ai">AI-osaaminen</a></li>
     <li><a href="#experience">Kokemus</a></li>
     <li><a href="#projects">Projektit</a></li>
-    <li><a href="#yrittajille">Yrittäjille</a></li>
     <li><a href="#contact">Yhteys</a></li>
   </ul>
 </nav>
@@ -452,12 +184,8 @@
   <div class="hero-content">
     <div class="hero-eyebrow">ICT-perustutkinto 2026 · Joensuu</div>
     <h1 class="hero-name">Maarit<br><span>Hurskainen</span></h1>
-    <div class="hero-role-wrap">
-      Olen <span id="rotating-role"></span>
-    </div>
-    <p class="hero-desc">
-      Taloushallinnon ammattilainen joka on kääntänyt kurssin IT-alalle — 10+ vuoden asiakaspalvelukokemus, vuosi automaatiotestausta ja aito into koodaamiseen.
-    </p>
+    <div class="hero-role-wrap">Olen <span id="rotating-role"></span></div>
+    <p class="hero-desc">Taloushallinnon ammattilainen joka on kääntänyt kurssin IT-alalle — 10+ vuoden asiakaspalvelukokemus, automaatiotestausta ja aito into tekoälyyn sekä koodaamiseen.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Ota yhteyttä</a>
       <a href="#skills" class="btn-ghost">Katso osaaminen</a>
@@ -472,8 +200,8 @@
         <div class="hero-stat-label">Tuntia Robot Frameworkia</div>
       </div>
       <div>
-        <div class="hero-stat-num">6+</div>
-        <div class="hero-stat-label">Vuotta taloushallintoa</div>
+        <div class="hero-stat-num">3+</div>
+        <div class="hero-stat-label">Vuotta AI-työkalujen käyttöä</div>
       </div>
     </div>
   </div>
@@ -486,25 +214,19 @@
   <div class="about-grid">
     <div class="about-img-wrap">
       <img src="https://maarithurska.github.io/kuvat/profiilikuva_maarit_hurskainen.jpg" alt="Maarit Hurskainen">
-      <div class="about-img-badge">Valmistunut 2026 ✓</div>
+      <div class="about-img-badge">Valmistunut 2026 </div>
     </div>
     <div class="about-text">
       <div class="section-label">Minusta</div>
       <h2 class="section-title">Kahden maailman osaaja</h2>
-      <p>
-        Taustani <strong>taloushallinnossa ja asiakaspalvelussa</strong> tekee minusta erilaisen IT-tekijän: ymmärrän liiketoiminnan tarpeet ja osaan kommunikoida myös teknisesti haastavan asian selkeästi.
-      </p>
-      <p>
-        Valmistuin <strong>ICT-perustutkinnosta</strong> 2025 ja hankin puolen vuoden työkokemuksen <strong>automaatiotestauksesta</strong>. Robot Framework on tullut tutuksi yli tuhannella tunnilla.
-      </p>
-      <p>
-        Haen nyt ensimmäistä IT-alan vakituista paikkaa — erityisesti <strong>help desk, testaus tai web-ylläpito</strong> kiinnostavat.
-      </p>
+      <p>Taustani <strong>taloushallinnossa ja asiakaspalvelussa</strong> tekee minusta erilaisen IT-tekijän: ymmärrän liiketoiminnan tarpeet ja osaan kommunikoida myös teknisesti haastavan asian selkeästi.</p>
+      <p>Valmistuin <strong>ICT-perustutkinnosta</strong> 2026 ja hankin käytännön kokemuksen <strong>automaatiotestauksesta</strong>. Lisäksi olen rakentanut AI-pohjaisia botteja harjoittelussa, omaan käyttöön ja muiden tarpeisiin.</p>
+      <p>Haen nyt ensimmäistä IT-alan vakituista paikkaa — erityisesti <strong>help desk, testaus tai web-ylläpito</strong> kiinnostavat.</p>
       <ul class="highlight-list">
         <li>Sertifioitu englannin kielen taito (B2)</li>
         <li>Harjoittelukokemus automaatiotestauksesta</li>
+        <li>Aktiivinen AI-työkalujen käyttäjä ja kehittäjä</li>
         <li>Luovan työn harrastajana silmää yksityiskohdille (valokuvaus, maalaus)</li>
-        <li>Shakin pelaajana analyyttistä ajattelua</li>
       </ul>
     </div>
   </div>
@@ -517,11 +239,11 @@
   <div class="skills-header">
     <div class="section-label">Osaaminen</div>
     <h2 class="section-title">Mitä osaan tehdä</h2>
-    <p class="section-desc">Monipuolinen työkalusetti rakentuu taloushallinnon, testauksen ja web-kehityksen ympärille.</p>
+    <p class="section-desc">Monipuolinen työkalusetti rakentuu taloushallinnon, testauksen, tekoälyn ja web-kehityksen ympärille.</p>
   </div>
   <div class="skills-grid">
     <div class="skill-card">
-      <div class="skill-card-icon">🛠️</div>
+      <div class="skill-card-icon"></div>
       <h3>Help Desk & Tuki</h3>
       <p>Asiakaspalvelun ammattilaisena ratkaisen ongelmat nopeasti ja selkeästi. Kärsivällisyyttä ja empatiaa riittää myös vähemmän teknisille käyttäjille.</p>
       <div class="skill-tags">
@@ -532,7 +254,7 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">🤖</div>
+      <div class="skill-card-icon"></div>
       <h3>Automaatiotestaus</h3>
       <p>Puolen vuoden harjoittelu automaatiotestauksessa antoi käytännön kokemuksen Robot Frameworkilla testaamisesta oikeassa tuotantotiimissä.</p>
       <div class="skill-tags">
@@ -543,7 +265,7 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">🌐</div>
+      <div class="skill-card-icon"></div>
       <h3>Web-kehitys & -ylläpito</h3>
       <p>Rakennan ja ylläpidän verkkosivuja HTML:llä, CSS:llä ja WordPressillä. Sivujen päivitys, testaus ja pienet muutokset sujuvat itsenäisesti.</p>
       <div class="skill-tags">
@@ -554,7 +276,7 @@
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-card-icon">📊</div>
+      <div class="skill-card-icon"></div>
       <h3>Taloushallinto & Toimisto</h3>
       <p>Kuusi vuotta taloushallinnon kokemusta tuo luotettavuutta ja tarkkuutta. Office-ohjelmat ovat hallussa syvällisesti.</p>
       <div class="skill-tags">
@@ -575,6 +297,8 @@
         <span class="tool-chip">Office 365</span>
         <span class="tool-chip">Git</span>
         <span class="tool-chip">Robot Framework</span>
+        <span class="tool-chip">ChatGPT / OpenAI</span>
+        <span class="tool-chip">Claude (Anthropic)</span>
       </div>
     </div>
     <div class="tools-row">
@@ -585,6 +309,8 @@
         <span class="tool-chip">Python</span>
         <span class="tool-chip">Ketterä kehitys</span>
         <span class="tool-chip">HTML & CSS</span>
+        <span class="tool-chip">OpenAI API</span>
+        <span class="tool-chip">Prompt engineering</span>
       </div>
     </div>
     <div class="tools-row">
@@ -595,7 +321,69 @@
         <span class="tool-chip">MySQL</span>
         <span class="tool-chip">MongoDB</span>
         <span class="tool-chip">React</span>
+        <span class="tool-chip">RAG-arkkitehtuuri</span>
       </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- AI OSAAMINEN -->
+<div id="ai">
+  <div class="ai-header">
+    <div class="section-label">Tekoäly</div>
+    <h2 class="section-title">AI-osaaminen</h2>
+  </div>
+  <div class="ai-grid">
+    <div class="ai-intro">
+      <p>Olen käyttänyt <strong>OpenAI:n ja Anthropicin (Claude) malleja</strong> aktiivisesti useamman vuoden ajan — sekä valmiina työkaluina että ohjelmallisesti API:n kautta.</p>
+      <p>Ymmärrän miten AI-botit toimivat <strong>sekä teknisesti että käytännössä</strong>: olen rakentanut asiakastukibotteja, tiedonhakubotteja (RAG) ja automaatioratkaisuja harjoittelussa, omaan käyttöön ja muiden tarpeisiin.</p>
+      <p>Tärkeä osa osaamistani on <strong>kriittinen asenne</strong> — osaan arvioida mitä AI tuottaa, tunnistaa virheet ja korjata ne. En ota AI:n tuotoksia sellaisenaan, vaan käytän sitä älykkäänä apuvälineenä.</p>
+      <p>Osaan myös <strong>selittää AI:n mahdollisuudet ja rajoitteet</strong> selkeästi muille, myös teknisesti kokemattomammille henkilöille.</p>
+    </div>
+    <div class="ai-cards">
+      <div class="ai-card">
+        <div class="ai-card-icon"></div>
+        <div>
+          <h4>Prompt engineering</h4>
+          <p>Osaan kirjoittaa tehokkaita prompteja ja ymmärrän miten konteksti, rooli ja rakenne vaikuttavat tulokseen.</p>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon"></div>
+        <div>
+          <h4>Ulkoiset & sisäiset botit</h4>
+          <p>Ymmärrän eron julkisen asiakastukibotin ja sisäisen tietotyökalun välillä — tietoturva, käyttötarkoitus ja arkkitehtuuri ratkaisevat.</p>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon"></div>
+        <div>
+          <h4>RAG — haku omasta tiedosta</h4>
+          <p>Olen rakentanut botteja jotka hakevat tietoa omista dokumenteista, ei vain yleisestä kielimallista.</p>
+        </div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon"></div>
+        <div>
+          <h4>Kriittinen käyttäjä</h4>
+          <p>Tunnistan AI:n hallusinaatiot ja rajoitteet. Tarkistan, korjaan ja arvioin — en luota sokeasti.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ai-tools-row">
+    <div class="tools-row-label">Käyttämäni AI-työkalut</div>
+    <div class="ai-tools-chips">
+      <span class="ai-chip">ChatGPT (OpenAI)</span>
+      <span class="ai-chip">Claude (Anthropic)</span>
+      <span class="ai-chip">OpenAI API</span>
+      <span class="ai-chip">Prompt engineering</span>
+      <span class="ai-chip">RAG-arkkitehtuuri</span>
+      <span class="ai-chip">Asiakastukibotit</span>
+      <span class="ai-chip">Automaatiobotit</span>
+      <span class="ai-chip">Tiedonhakubotit</span>
     </div>
   </div>
 </div>
@@ -606,13 +394,12 @@
 <section id="experience">
   <div class="section-label">Kokemus & Koulutus</div>
   <h2 class="section-title">Polku tähän hetkeen</h2>
-
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-period">2024 – 2026</div>
       <div class="timeline-title">ICT-perustutkinto, Ohjelmoija</div>
       <div class="timeline-org">Riveria</div>
-      <div class="timeline-desc">Ohjelmoinnin perusteet, web-kehitys, automaatiotestaus. Sisälsi puolen vuoden työharjoittelun automaatiotestauksessa, jossa pääsin työskentelemään oikeassa kehitystiimissä Robot Frameworkin parissa yli 1 000 tunnin edestä.</div>
+      <div class="timeline-desc">Ohjelmoinnin perusteet, web-kehitys, automaatiotestaus. Sisälsi puolen vuoden työharjoittelun automaatiotestauksessa oikeassa kehitystiimissä — yli 1 000 tuntia Robot Frameworkia. Harjoitteluun sisältyi myös AI-pohjaisten bottien rakentaminen OpenAI API:n avulla.</div>
     </div>
     <div class="timeline-item">
       <div class="timeline-period">Useita vuosia</div>
@@ -636,7 +423,6 @@
   <div class="projects-header">
     <div class="section-label">Projektit</div>
     <h2 class="section-title">Mitä olen rakentanut</h2>
-    <p class="section-desc">Tänne tulee esimerkkejä omista projekteistasi — lisää linkki GitHubiin tai kuvaile mitä olet tehnyt.</p>
   </div>
   <div class="projects-grid">
     <div class="project-card">
@@ -653,38 +439,10 @@
     </div>
     <div class="project-card">
       <div class="project-type">Tulossa</div>
-      <h3>Yksinyrittäjän kotisivupaketti</h3>
-      <p>Suunnittelen selkeän ja edullisen kotisivupaketin yksinyrittäjille — nopea toimitusaika, ei turhia lisämaksuja, helposti päivitettävä.</p>
-      <a href="#contact" class="project-link">Kiinnostuitko? →</a>
+      <h3>RAG-tiedonhakubotti</h3>
+      <p>Kehitän bottia joka hakee vastauksia omista dokumenteista — esimerkiksi yrityksen sisäisestä tietopankista. Rakentuu OpenAI API:n ja vektoritietokannan päälle.</p>
+      <a href="#contact" class="project-link">Kysy lisää →</a>
     </div>
-  </div>
-</div>
-
-<!-- YRITTÄJILLE -->
-<div id="yrittajille">
-  <div class="section-label">Palvelu yrittäjille</div>
-  <h2 class="section-title">Tarvitsetko kohtuuhintaiset kotisivut?</h2>
-  <p class="section-desc">Rakennan yksinkertaiset, selkeät ja toimivat kotisivut yksinyrittäjille — ilman turhia kuluja tai monimutkaisia sopimuksia.</p>
-  <div class="yrittaja-grid">
-    <div class="yrittaja-item">
-      <h4>Nopea toimitusaika</h4>
-      <p>Yksinkertaiset sivut valmiiksi 1–2 viikossa. Ei odottelua, ei välikäsiä.</p>
-    </div>
-    <div class="yrittaja-item">
-      <h4>Selkeä hinnoittelu</h4>
-      <p>Sovitaan hinta etukäteen. Ei yllätyksiä tai tuntivelotuksia pienistä muutoksista.</p>
-    </div>
-    <div class="yrittaja-item">
-      <h4>Helppo ylläpitää</h4>
-      <p>Opetan käyttämään sivuja itse, jos haluat. Tai hoidan päivitykset puolestasi.</p>
-    </div>
-    <div class="yrittaja-item">
-      <h4>Mobiiliystävällinen</h4>
-      <p>Sivut toimivat moitteettomasti kaikilla laitteilla — puhelimella, tabletilla ja tietokoneella.</p>
-    </div>
-  </div>
-  <div style="margin-top:2.5rem;">
-    <a href="#contact" class="btn-primary">Kysy tarjous</a>
   </div>
 </div>
 
@@ -695,11 +453,11 @@
   <p class="section-desc">Haen töitä help deskin, testauksen tai web-ylläpidon parista — tai kenties juuri sinun tarvitsemassasi roolissa.</p>
   <div class="contact-links">
     <a href="mailto:tm.pihlajaniemi@gmail.com" class="btn-primary">Lähetä sähköpostia</a>
-    <a href="https://linkedin.com/in/maarithurskainen" class="btn-ghost" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/maarit-hurskainen-8a227b335" class="btn-ghost" target="_blank">LinkedIn</a>
     <a href="https://github.com/maarithurska" class="btn-ghost" target="_blank">GitHub</a>
   </div>
   <div class="contact-detail">
-    📍 Joensuu &nbsp;·&nbsp; <a href="mailto:tm.pihlajaniemi@gmail.com">tm.pihlajaniemi@gmail.com</a>
+     Joensuu &nbsp;·&nbsp; <a href="mailto:tm.pihlajaniemi@gmail.com">tm.pihlajaniemi@gmail.com</a>
   </div>
 </section>
 
@@ -708,46 +466,26 @@
 </footer>
 
 <script>
-  const roles = [
-    'help desk -osaaja',
-    'automaatiotestaaja',
-    'web-kehittäjä',
-    'WordPress-ylläpitäjä',
-    'IT-tukihenkilö'
-  ];
+  const roles = ['help desk -osaaja', 'automaatiotestaaja', 'web-kehittäjä', 'AI-osaaja', 'IT-tukihenkilö'];
   let ri = 0, ci = 0, deleting = false;
   const el = document.getElementById('rotating-role');
-
   function type() {
     const current = roles[ri];
     if (!deleting) {
-      el.textContent = current.slice(0, ci + 1);
-      ci++;
-      if (ci === current.length) {
-        deleting = true;
-        setTimeout(type, 2000);
-        return;
-      }
+      el.textContent = current.slice(0, ci + 1); ci++;
+      if (ci === current.length) { deleting = true; setTimeout(type, 2000); return; }
     } else {
-      el.textContent = current.slice(0, ci - 1);
-      ci--;
-      if (ci === 0) {
-        deleting = false;
-        ri = (ri + 1) % roles.length;
-      }
+      el.textContent = current.slice(0, ci - 1); ci--;
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
     }
     setTimeout(type, deleting ? 60 : 90);
   }
   type();
 
-  // Smooth scroll & active nav
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 </script>
