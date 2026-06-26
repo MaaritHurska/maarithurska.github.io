@@ -14,7 +14,7 @@ A contact section
 
 Possibly a portfolio or blog page
 
-🔧 Technologies Used
+Technologies Used
 
 The website is built using the following technologies:
 
@@ -24,12 +24,11 @@ CSS3 - for styling and layout
 
 W3Schools tutorials - as a guide in building the site
 
-Font Awesome - for adding icons
 
 📬 Contact Information
 
 If you have any questions or feedback, feel free to contact me:
-📧 Email: hello@maarithurskainen.com
+📧 Email: maarit.hurskainen@icloud.com
 
 📜 License
 
